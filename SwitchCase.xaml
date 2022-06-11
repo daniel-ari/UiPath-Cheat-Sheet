@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="745,1185" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1130,893" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
@@ -54,11 +54,10 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence | Switch case cheat sheet" sap:VirtualizedContainerService.HintSize="644,721" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="Sequence | Switch case cheat sheet" sap:VirtualizedContainerService.HintSize="644,828" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_ClientEmail" />
       <Variable x:TypeArguments="s:String[]" Name="arr_Keywords" />
@@ -68,7 +67,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Prerequisites to execute the switch case:&#xA;Any string that may contain unique keywords that require the bot to run a specific workflow -&gt; In this example, a client email to customer support.&#xA;An array of strings containing your unique keywords -&gt; In this example, &quot;replacement&quot;, &quot;refund&quot;, &quot;shipment method&quot; and &quot;default of payment&quot;." DisplayName="Sequence | Search for multiple keywords in a string and execute a switch case based on the first match" sap:VirtualizedContainerService.HintSize="602,629" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence sap2010:Annotation.AnnotationText="Prerequisites to execute the switch case:&#xA;Any string containing unique keywords that require the bot to run a specific workflow -&gt; In this example, a client email to customer support.&#xA;An array of strings containing your unique keywords in lowercase -&gt; In this example, &quot;replacement&quot;, &quot;refund&quot;, &quot;shipment method&quot; and &quot;default of payment&quot;." DisplayName="Sequence | Search for multiple keywords in a string and execute a switch case based on the first match" sap:VirtualizedContainerService.HintSize="602,736" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -100,7 +99,7 @@ X</InArgument>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Switch x:TypeArguments="x:String" DisplayName="Switch | Execute the case based on the first match of keywords in the input string" Expression="[arr_Keywords.FirstOrDefault(Function(s) str_ClientEmail.ToString.ToLower.Contains(s))]" sap:VirtualizedContainerService.HintSize="560,204" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch x:TypeArguments="x:String" DisplayName="Switch | Execute the case based on the first match of keywords in the input string" Expression="[arr_Keywords.FirstOrDefault(Function(s) str_ClientEmail.ToString.ToLower.Contains(s))]" sap:VirtualizedContainerService.HintSize="560,311" sap2010:WorkflowViewState.IdRef="Switch`1_1">
         <Switch.Default>
           <WriteLine DisplayName="WriteLine | No matches" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="The client's email does not contain any indicators." />
         </Switch.Default>
